@@ -324,6 +324,10 @@ export default class PdfView extends Component {
             data[i] = {key: i};
         }
 
+        const index = this.props.page < 1 ? 0 : this.props.page - 1;
+        return this._renderItem({ item: data[index], index });
+
+/*
         return (
             <PdfViewFlatList
                 ref={this._getRef}
@@ -352,6 +356,7 @@ export default class PdfView extends Component {
                 onContentSizeChange={this._onListContentSizeChange}
             />
         );
+*/
 
     };
 
